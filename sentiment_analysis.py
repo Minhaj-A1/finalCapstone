@@ -27,9 +27,9 @@ reviews_data.dropna(inplace = True)
 reviews_data = reviews_data.astype(str).str.strip()
 
 # Select two random reviews for analysis
-upper_index = len(reviews_data) - 1  # This is the index of the last review
-first_review = reviews_data[random.randint(0,upper_index)] # First random review
-second_review = reviews_data[random.randint(0,upper_index)] # Second random review
+reviews_list = random.sample(list(reviews_data), k=2) # Select two random reviews to undergo sentiment and similarity analysis 
+first_review = reviews_list[0] # First random review
+second_review = reviews_list[1] # Second random review
 
 # Print the selected reviews
 print(f"1st review: {first_review} \n")
