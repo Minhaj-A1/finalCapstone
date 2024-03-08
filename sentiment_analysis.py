@@ -5,7 +5,9 @@ import random
 from spacytextblob.spacytextblob import SpacyTextBlob
 
 # Load the 'en_core_web_sm' language model
-nlp = spacy.load("en_core_web_sm")
+# Load the more advanced language model which includes word vectors 
+# This will allow more accurate similarity analysis to be performed
+nlp = spacy.load("en_core_web_md")
 
 # Add spacytextblob to the nlp pipeline so sentiment analysis can be performed
 nlp.add_pipe("spacytextblob")
@@ -68,9 +70,6 @@ print(f"Sentiment analysis for 2nd review: {sentiment_analysis(second_review)} \
     an objective sentiment and a subjectivity score of 1 denotes a subjective sentiment.
 '''
 
-# Load the more advanced language model which includes word vectors 
-# This will allow more accurate similarity analysis to be performed
-nlp = spacy.load("en_core_web_md")
 
 # Define function for similarity analysis
 # This function will return the similarity score between the two previously selected reviews
